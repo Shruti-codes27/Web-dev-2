@@ -12,10 +12,10 @@ let heading = document.getElementById("maintitle");
 console.log(heading.textContent);
 
 
-//getElementsByClassName()
-// document.getElementByClassName("className");
-let paragraphs = document.getElementsByClassName("info");
-console.log(paragraphs[0].textContent);    //output:"First"
+// //getElementsByClassName()
+// // document.getElementByClassName("className");
+// let paragraphs = document.getElementsByClassName("info");
+// console.log(paragraphs[0].textContent);    //output:"First"
 
 
 
