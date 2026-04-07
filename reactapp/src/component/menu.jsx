@@ -1,28 +1,50 @@
-import React ,{ Component } from 'react'
+import React ,{Component}from 'react'
+import { add as addition } from './utility'
+// function Menu() {
+//     console.log(addition(3,4))
+//   return (
+//     <div>
+//       <h1>Menu</h1>
+//       <ul>
+//         <li>Sports</li>
+//         <li>Entertainment</li>
+//         <li>Polititcs</li>
 
-function Menu() {
-    return (
-        <div>
-            <h1>Menu</h1>
-            <ul>
-                <li>sports</li>
-                <li>news</li>
-                <li>entertainment</li>
-                <li>technology</li>
-            </ul>
-        </div>
-    )
-}
+//       </ul>
+//     </div>
+//   )
+// }
 
-class Menu extends React.Component {
+// export default Menu
 
+class Menu extends Component {
+    constructor(){
+        super()
+        this.state={
+            count:0,
+            age:0,
+            name:''
+        }
+
+    }
+    handleIncrement=()=>{
+        this.setState({count:this.state.count+1})
+    }
     render() {
         return (
             <div>
                 <h1>Menu</h1>
                 <ul>
-                    <li>sports</li>
-                    <li>news</li>
-                    <li>entertainment</li>
-                    <li>technology</li>
+                    <li>Sports</li>
+                    <li>Entertainment</li>
+                    <li>Polititcs</li>
+                    <li>World</li>
                 </ul>
+                <h2>{this.state.count}</h2>
+                <button onClick={this.handleIncrement}>Increment</button>
+            </div>
+        )
+    }
+}
+
+export default Menu
