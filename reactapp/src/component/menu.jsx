@@ -1,5 +1,7 @@
 import React ,{Component}from 'react'
 import { add as addition } from './utility'
+import style from "../css/Menu.module.css"
+
 // function Menu() {
 //     console.log(addition(3,4))
 //   return (
@@ -27,9 +29,28 @@ class Menu extends Component {
         }
 
     }
+
+    componentDidMount(){
+        console.log("Component Did Mount")
+        //data to be retriewed from backend
+    }
+
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextState.count===1){
+        return false
+        }
+        console.log("Should Component Update")
+        return true
+    }
+
     handleIncrement=()=>{
         this.setState({count:this.state.count+1})
     }
+
+    componentwillUnmount(){
+        console.log("Component will Unmount")
+    }
+
     render() {
         return (
             <div>
@@ -41,7 +62,7 @@ class Menu extends Component {
                     <li>World</li>
                 </ul>
                 <h2>{this.state.count}</h2>
-                <button onClick={this.handleIncrement}>Increment</button>
+                <button className={style.btn} onClick={this.handleIncrement}>Increment</button>
             </div>
         )
     }
